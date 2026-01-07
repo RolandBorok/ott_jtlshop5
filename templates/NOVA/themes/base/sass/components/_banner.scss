@@ -1,0 +1,26 @@
+.banner {
+  position: relative;
+
+  > .area {
+    display: block;
+    position: absolute;
+    border: 0 solid #fff;
+    border-radius: $border-radius;
+  }
+
+  > a.area {
+    position: absolute;
+    display: block;
+  }
+  > .area-desc {
+    display: none;
+  }
+  > a {
+    border: 0 solid #ffffff;
+    border-radius: 2px;
+  }
+}
+
+.popover-min-width {
+  min-width: 15rem;
+}

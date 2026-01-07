@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;600;700&display=swap');
+
+#footer {
+  background-color: #666;
+  color: #fff;
+  a{
+    color: #FFF !important;
+  }
+  .nav-link{
+    color: #FFF !important;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+    &:hover{
+      color: #FFA1A1 !important;
+      font-weight: 600;
+    }
+  }
+   .link_text{
+    color: #FFF !important;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 143.75% */
+  }
+  a{
+    text-decoration: none !important;
+  }
+  .productlist-filter-headline{
+    color: #FFF !important;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .small{
+    color: #FFF;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px; /* 200% */
+  }
+  #copyright{
+    background-color: #323232;
+  }
+
+  #system-credits{
+    margin-left: unset !important;
+    padding-right: 0 !important;
+  }
+  .footer_row{
+    justify-content: center;
+  }
+
+  .zahlungsarten, .versandarten{
+    display: grid;
+    gap: 15px;
+  }
+
+  .kategorien .nav-link{
+    margin-bottom: -15px;
+  }
+
+  .payment-methods{
+    padding: 20px 0;
+    .zahlungsart-img{
+      margin-right: 15px;
+      vertical-align: bottom;
+    }
+  }
+
+  .social_icons{
+    .social-img{
+      margin-right: 10px;
+    }
+    .blog_icon{
+      height: 35px;
+    }
+  }
+
+  .footer_container{
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
+  }
+}
+

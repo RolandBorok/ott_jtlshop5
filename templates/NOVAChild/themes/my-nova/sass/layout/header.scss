@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;600;700&display=swap');
+
+#search .btn-secondary {
+  background-color: #ba0109;
+}
+
+@media (min-width: 992px) {
+
+  .sticky-top{
+    padding-top: 20px;
+    background: #FAFAFA;
+  }
+
+  .toptopbar{
+    background: #666;
+    max-width: unset;
+    padding: 0;
+    justify-content: center;
+  }
+  #shop-nav .fas {
+    font-size: 30px;
+    color: #26323C;
+  }
+
+  #shop-nav .cart-icon-dropdown-price {
+    font-size: 20px;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    color: white;
+    max-width: 1351px;
+    position: relative;
+    padding: 5px;
+    @media (min-width: 1400px) {
+      left: 10px;
+    }
+  }
+  .topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header .navbar-nav>.nav-item:hover>.nav-link::before {
+    width: 101% !important;
+  }
+
+  .topbar-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .topbar > div p {
+    color: #FFF;
+    font-family: "Open Sans", serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 !important;
+  }
+
+  .nav-mobile-body .navbar-nav{
+    justify-content: start !important;
+  }
+  .nav-mobile-body .nav-link{
+    color: #26323C !important;
+    font-family: "Open Sans", serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  /* Custom Calculator Button in Menu */
+  .custom-calculator-btn {
+    background-color: #EAEAEA; /* The light gray background */
+    border-radius: 2px;
+    border: 1px solid rgba(55, 73, 87, 0.22);
+    padding: 0.5rem !important;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;                  /* Space between icon and text */
+
+    color: #26323C;
+    font-family: "Open Sans", serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    transition: all 0.2s ease;
+  }
+
+  /* Hover Effect */
+  .custom-calculator-btn:hover {
+    background-color: #d6d6d6;
+    color: #000 !important;
+    text-decoration: none;
+    border-color: #bbb;
+  }
+
+  /* Icon styling */
+  .custom-calculator-btn i {
+    font-size: 14px;
+    color: #444;
+  }
+
+}

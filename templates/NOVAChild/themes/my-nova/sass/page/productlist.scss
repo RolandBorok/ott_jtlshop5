@@ -1,0 +1,15 @@
+.productbox-image {
+  width: 100%;
+  max-width: 300px;      /* choose your box width */
+  aspect-ratio: 1 / 1;  /* keeps it square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.productbox-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* keeps image fully visible */
+}

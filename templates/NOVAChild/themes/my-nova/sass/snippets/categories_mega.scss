@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;600;700&display=swap');
+
+.product-category-col {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px; /* Space before the vertical line */
+  padding-left: 30px;  /* Space after the vertical line of previous col */
+
+  /* Variable width logic */
+  min-width: 250px;    /* Ensures columns aren't too skinny */
+
+  /* The vertical separator line */
+  border-right: 1px solid #e0e0e0;
+}
+
+/* Remove line from the very last column */
+.product-category-col:last-child {
+  border-right: none;
+}
+
+/* Remove padding-left from the very first column so it aligns with the logo/edge */
+.product-category-col:first-of-type {
+  padding-left: 15px;
+}
+
+.product-category-link {
+  display: block;
+  padding: 8px 0;           /* Vertical spacing between items */
+  font-weight: 400;
+  text-decoration: none;
+  color: #26323C;
+
+  font-family: "Open Sans", serif;
+  font-size: 15px;
+  font-style: normal;
+  line-height: normal;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+.product-category-link:hover {
+  text-decoration: none;
+  scale: 1.02;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .product-category-col {
+    border-right: none;
+    padding-left: 15px;
+    white-space: normal; /* Allow wrapping on mobile */
+  }
+  .product-category-link {
+    white-space: normal;
+  }
+}
