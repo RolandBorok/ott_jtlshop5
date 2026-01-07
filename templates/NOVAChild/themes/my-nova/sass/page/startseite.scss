@@ -1,4 +1,181 @@
 body[data-page="18"] {
+
+  .home-slider {
+    .caption-list{
+      list-style: none;
+      text-align: left;
+    }
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .nivoSlider {
+      box-shadow: none;
+      background: transparent;
+      z-index: 2;
+      min-height: 600px;
+      background-size: cover;
+      background-position: center;
+
+      @media (max-width: 1200px) {
+        min-height: 500px;
+      }
+
+      @media (max-width: 768px) {
+        min-height: 400px;
+      }
+
+      img {
+        min-height: 600px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+
+        @media (max-width: 1200px) {
+          min-height: 500px;
+        }
+
+        @media (max-width: 768px) {
+          min-height: 400px;
+        }
+      }
+      img.title-image {
+        width: auto !important;
+        min-height: auto !important;
+        height: 45px !important;
+        max-width: none !important;
+        object-fit: contain !important;
+        display: inline-block !important;
+        position: relative;
+      }
+
+      .nivo-caption {
+        opacity: 1 !important;
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: none !important;
+        overflow: visible;
+        color: white !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 600px;
+        margin-left: 5px;
+        font-family: 'Open Sans';
+        font-weight: 600;
+
+        @media (max-width: 768px) {
+          max-width: 85%;
+          padding: 0 15px;
+        }
+
+        .title {
+          align-self: flex-start;
+          line-height: 3.5rem;
+          font-weight: 600;
+        }
+
+        .caption-list {
+          font-size: 20px;
+          line-height: 1.8;
+          color: inherit !important;
+          text-align: left;
+          width: 100%;
+          padding: 0;
+          list-style: none;
+          margin: 12px 0;
+
+          @media (max-width: 768px) {
+            font-size: 16px;
+          }
+
+          li {
+            padding-left: 30px;
+            position: relative;
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 24px;
+              height: 24px;
+              background-image: url('/templates/NOVAChild/themes/my-nova/assets/Check.png');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+        }
+
+        &::after {
+          content: "Fugodicht entdecken";
+          color: white;
+          background: $primary;
+          font-size: 18px;
+          padding: 8px 20px;
+          pointer-events: auto;
+          cursor: pointer;
+          align-self: flex-start;
+          margin-top: 10px;
+
+          @media (max-width: 768px) {
+            font-size: 14px;
+            padding: 10px 30px;
+          }
+
+          &:hover {
+            background: darken($primary, 10%);
+          }
+        }
+      }
+    }
+
+    .nivo-directionNav .nivo-nextNav {
+      background: url('/templates/NOVAChild/themes/my-nova/assets/button-right.svg') no-repeat;
+      height: 45px;
+    }
+
+    .nivo-directionNav .nivo-prevNav {
+      background: url('/templates/NOVAChild/themes/my-nova/assets/button-left.svg') no-repeat;
+      height: 45px;
+    }
+
+    // Control Dots
+    .nivo-controlNav {
+      //position: relative !important;
+      //width: fit-content;
+      //transform: translateY(-160%);
+      //z-index: 100;
+      //margin: auto;
+      //display: flex;
+      //align-items: center;
+      //gap: 10px;
+      //
+      //@media (max-width: 768px) {
+      //  transform: translateY(-120%);
+      //}
+      //
+      //.nivo-control {
+      //  margin: 0;
+      //  width: 17px;
+      //  height: 17px;
+      //  display: inline-block;
+      //  z-index: 100;
+      //  background: url(/templates/NOVAChildnew/assets/icons/bullets_transparent.png) no-repeat;
+      //  background-size: contain;
+      //  transition: transform 0.3s ease;
+      //
+      //  &.active {
+      //    transform: scale(1.2);
+      //  }
+      //}
+    }
+  }
+
   h2{
     color: #26323C;
     font-family: "Open Sans", serif;
@@ -194,6 +371,10 @@ body[data-page="18"] {
   }
   .opc-product-slider {
     overflow: visible !important;
+  }
+
+  .slick-dots li button {
+    border-radius: 0 !important;
   }
 
   .slick-prev {
