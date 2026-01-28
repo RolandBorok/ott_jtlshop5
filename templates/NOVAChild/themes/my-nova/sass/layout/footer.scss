@@ -76,7 +76,7 @@
 
   .social_icons{
     .social-img{
-      margin-right: 10px;
+      margin-right: 25px;
     }
     .blog_icon{
       height: 35px;
@@ -89,3 +89,23 @@
   }
 }
 
+//Responsive
+@media (max-width: 992px) {
+  #footer{
+    padding: 1rem 0 !important;
+  }
+  #sidebox128{
+    padding-top: 20px;
+  }
+  .payment-methods img{
+    margin: 5px !important;
+  }
+  .social_icons{
+    padding-top: 20px;
+    padding-left: 15px;
+  }
+
+  .payment-methods{
+    display: block !important;
+  }
+}

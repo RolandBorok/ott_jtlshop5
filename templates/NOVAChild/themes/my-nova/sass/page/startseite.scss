@@ -50,6 +50,7 @@ body[data-page="18"] {
       }
 
       .nivo-caption {
+        pointer-events: none;
         opacity: 1 !important;
         position: absolute;
         left: 35%;
@@ -66,6 +67,12 @@ body[data-page="18"] {
         font-family: 'Open Sans';
         font-weight: 600;
 
+        // RESPONSIVE FIX: Center caption on mobile so it doesn't float off-screen
+        @media (max-width: 991px) {
+          left: 50%;
+          width: 90%;
+        }
+
         @media (max-width: 768px) {
           max-width: 85%;
           padding: 0 15px;
@@ -75,6 +82,11 @@ body[data-page="18"] {
           align-self: flex-start;
           line-height: 3.5rem;
           font-weight: 600;
+          @media (max-width: 768px) {
+            line-height: 1.2;
+            font-size: 28px;
+            margin-bottom: 10px;
+          }
         }
 
         .caption-list {
@@ -112,6 +124,7 @@ body[data-page="18"] {
         }
 
         &::after {
+          pointer-events: auto;
           content: "Fugodicht entdecken";
           color: white;
           background: $primary;
@@ -127,9 +140,9 @@ body[data-page="18"] {
             padding: 10px 30px;
           }
 
-          &:hover {
-            background: darken($primary, 10%);
-          }
+        }
+        &:hover::after {
+          background: lighten($primary, 5%);
         }
       }
     }
@@ -143,37 +156,6 @@ body[data-page="18"] {
       background: url('/templates/NOVAChild/themes/my-nova/assets/button-left.svg') no-repeat;
       height: 45px;
     }
-
-    // Control Dots
-    .nivo-controlNav {
-      //position: relative !important;
-      //width: fit-content;
-      //transform: translateY(-160%);
-      //z-index: 100;
-      //margin: auto;
-      //display: flex;
-      //align-items: center;
-      //gap: 10px;
-      //
-      //@media (max-width: 768px) {
-      //  transform: translateY(-120%);
-      //}
-      //
-      //.nivo-control {
-      //  margin: 0;
-      //  width: 17px;
-      //  height: 17px;
-      //  display: inline-block;
-      //  z-index: 100;
-      //  background: url(/templates/NOVAChildnew/assets/icons/bullets_transparent.png) no-repeat;
-      //  background-size: contain;
-      //  transition: transform 0.3s ease;
-      //
-      //  &.active {
-      //    transform: scale(1.2);
-      //  }
-      //}
-    }
   }
 
   h2{
@@ -184,6 +166,7 @@ body[data-page="18"] {
     font-weight: 600;
     line-height: normal;
   }
+
   //second element
   .features-container {
     display: flex;
@@ -193,6 +176,7 @@ body[data-page="18"] {
     max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
+    padding: 0 15px; // Prevents touching edges
   }
 
   .feature-badge {
@@ -203,16 +187,16 @@ body[data-page="18"] {
     gap: 15px;
     padding: 5px;
     flex: 1;
+    min-width: 280px; // Ensures they don't get too skinny
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     justify-content: center;
     height: 90px;
-  }
 
-  .icon-wrapper {
-
-  }
-
-  .icon {
+    // RESPONSIVE FIX: Allow height to expand if text wraps on tiny screens
+    @media (max-width: 480px) {
+      height: auto;
+      padding: 15px 5px;
+    }
   }
 
   .icon-label {
@@ -250,6 +234,9 @@ body[data-page="18"] {
     color: white;
     padding: 20px 50px;
     margin-top: 100px;
+    @media (max-width: 768px) {
+      margin-top: 50px;
+    }
   }
 
   .content-wrapper {
@@ -341,22 +328,22 @@ body[data-page="18"] {
 
     .main-title {
       font-size: 24px;
+      text-align: center;
     }
 
     .process-steps {
       flex-direction: column;
-      gap: 30px;
     }
 
     .arrow {
       transform: rotate(90deg);
       font-size: 36px;
+      top: 100px;
     }
 
     .step-icon {
-      width: 100px;
-      height: 100px;
       padding: 20px;
+      margin-bottom: 10px;
     }
 
     .step-text {
@@ -365,38 +352,40 @@ body[data-page="18"] {
   }
 
   //slider
-
   .input-group.form-counter{
     display: none;
   }
-  .opc-product-slider {
-    overflow: visible !important;
+  @media  (min-width: 1500px){
+    .opc-product-slider {
+      overflow: visible !important;
+    }
   }
 
   .slick-dots li button {
     border-radius: 0 !important;
   }
 
+  // RESPONSIVE FIX: Hide arrows on small screens if they overlap or break layout
+  @media (max-width: 1300px) {
+    .slick-prev, .slick-next {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
   .slick-prev {
     margin-left: -60px;
-
-    &::after {
-      right: 7px;
-    }
+    &::after { right: 7px; }
   }
 
   .slick-next {
     margin-right: -60px;
-
-    &::after {
-      right: 5px;
-    }
+    &::after { right: 5px; }
   }
 
   .slick-arrow {
     height: 20px;
     width: 26px;
-
     &::after {
       font-size: 1.4rem;
       position: relative;
@@ -406,13 +395,12 @@ body[data-page="18"] {
 
   .product-wrapper {
     margin: 15px 0;
-    transition: transform 0.3s ease; // <-- smooth animation
+    transition: transform 0.3s ease;
 
     &:hover {
-      transform: scale(1.02); // <-- use transform instead of scale
+      transform: scale(1.02);
     }
   }
-
 
   .product-wrapper .productbox-inner {
     padding: 20px 20px;
@@ -454,12 +442,19 @@ body[data-page="18"] {
     margin-left: 10px;
   }
 
-//4. Element
+  //4. Element
   .gewerke {
     display: flex;
     height: 338px;
+    @media (max-width: 900px) {
+      height: auto; // Let it grow on mobile
+    }
   }
-
+  @media (max-width: 1300px) {
+    .zertifiziert .col-xl-1 {
+      display: none;
+    }
+  }
   /* Left Content Section */
   .content-section {
     background-color: #26323C;
@@ -469,12 +464,17 @@ body[data-page="18"] {
     z-index: 2;
 
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-
     margin-right: -9%;
+
+    @media (max-width: 900px) {
+      clip-path: none;
+      margin-right: 0;
+      padding: 40px 20px;
+    }
   }
 
   .content-section h1 {
-   color: white;
+    color: white;
   }
 
   .content-section p {
@@ -493,6 +493,7 @@ body[data-page="18"] {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s;
+    text-decoration: none;
   }
 
   .cta-button:hover {
@@ -503,10 +504,14 @@ body[data-page="18"] {
   .services-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    grid-template-rows: repeat(3, 1fr); /* Three equal rows */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
     gap: 15px;
     z-index: 1;
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr; // Single column on very small phones
+    }
   }
 
   .service-card {
@@ -514,23 +519,43 @@ body[data-page="18"] {
     color: white;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Aligns text to the right as seen in image */
+    justify-content: flex-end;
     padding: 0 20px;
     font-size: 1.5rem;
+
+    @media (max-width: 900px) {
+      padding: 20px;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
   }
 
-  /* Responsive adjustments */
+  /* Responsive adjustments (Main container) */
   @media (max-width: 900px) {
     .gewerke {
       flex-direction: column;
-    }
-    .content-section {
-      clip-path: none;
-      margin-right: 0;
-      padding: 40px;
     }
     .services-grid {
       padding: 20px;
     }
   }
+}
+
+.home-slider {
+  .nivo-controlNav {
+    .nivo-control {
+      background: url(/templates/NOVAChild/themes/my-nova/assets/bullets_transparent.png) no-repeat
+    }
+  }
+}
+
+.custom_content {
+  display: flex;
+  gap: 40px; /* space between columns */
+  flex-wrap: wrap; /* stacks on small screens */
+}
+
+.custom_content .block {
+  flex: 1;
+  min-width: 250px;
 }

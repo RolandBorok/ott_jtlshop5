@@ -3,20 +3,42 @@
 #search .btn-secondary {
   background-color: #ba0109;
 }
+.toptopbar{
+  background: #6666;
+  .topbar-item{
+    padding: 10px;
+  }
+  .topbar-item p{
+    display: inline;
+    padding-left: 15px;
+  }
+}
+@media (max-width: 992px) {
+  .fa-sup{
+    margin-left: -30px;
+  }
+  .d-print-none{
+    margin-top: 20px;
+  }
+  .home-slider{
+    margin-top: 0 !important;
+  }
+}
 
 @media (min-width: 992px) {
 
-  .sticky-top{
+  .d-print-none  .sticky-top{
     padding-top: 20px;
     background: #FAFAFA;
   }
 
   .toptopbar{
-    background: #666;
+    background: #666 !important;
     max-width: unset;
     padding: 0;
     justify-content: center;
   }
+
   #shop-nav .fas {
     font-size: 30px;
     color: #26323C;

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/* --- General Accordion Styling --- */
+body[data-page="2"],body[data-page="18"], body[data-page="31"] {
+  /* Remove the default background and borders from each accordion item */
+
+  .opc-Accordion{
+    justify-self: center;
+    width: 70%;
+    font-family: "Outfit", sans-serif !important;
+    p{
+      font-weight: 400;
+    }
+  }
+
+  .opc-Accordion .opc-Accordion-group,
+  .opc-Accordion .card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0; /* Remove rounded corners */
+  }
+
+  /* Add the horizontal separator lines */
+  .opc-Accordion .opc-Accordion-group,
+  .opc-Accordion .card {
+    border-bottom: 1px solid #e0e0e0; /* Light gray bottom line */
+  }
+
+  /* Remove padding and background from the header area */
+  .opc-Accordion .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  /* Style the content/answer area */
+  .opc-Accordion .card-body {
+    /* Adjust padding to align the answer text with the question text */
+    padding: 15px 15px 15px 40px;
+    color: #1B223C;
+    font-family: "Open Sans", serif;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 28px; /* 175% */
+  }
+
+
+  /* --- Question/Button Styling --- */
+
+  .opc-Accordion .btn.opc-Accordion-head {
+    border: none;
+    width: 100%;
+    text-align: left;
+    text-decoration: none !important;
+    padding: 30px 15px 30px 40px;
+    position: relative;
+    color: #1B223C;
+    font-family: "Open Sans", serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-image: none !important;
+  }
+
+  /* Remove the blue box-shadow when the button is focused */
+  .opc-Accordion .btn.opc-Accordion-head:focus {
+    box-shadow: none;
+  }
+
+  /* --- Icon Styling (+/-) --- */
+
+  /* Remove the original icon, which is often an ::after pseudo-element */
+  .opc-Accordion .btn.opc-Accordion-head::after {
+    display: none;
+  }
+
+  /* Create the new icon using the ::before pseudo-element */
+  .opc-Accordion .btn.opc-Accordion-head::before {
+    content: '+';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 35px;
+    font-weight: 300;
+    color: #2c3e50;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* Only the open state gets minus */
+  .opc-Accordion .btn.opc-Accordion-head[aria-expanded="true"]::before {
+    content: '\2212';
+  }
+}

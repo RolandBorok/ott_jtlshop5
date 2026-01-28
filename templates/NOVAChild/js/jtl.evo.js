@@ -92,8 +92,8 @@
             displayCounts = [
                 parseInt(displayCounts[0]) || 2,
                 parseInt(displayCounts[1]) || 3,
-                parseInt(displayCounts[2]) || 5,
-                parseInt(displayCounts[3]) || 7,
+                parseInt(displayCounts[2]) || 4,
+                parseInt(displayCounts[3]) || 4,
             ];
             let sliderOptions = {
                 'box-slider' : {
@@ -183,16 +183,16 @@
                         {
                             breakpoint: 992,
                             settings: {
-                                slidesToShow: displayCounts[2] || 5,
-                                slidesToScroll: displayCounts[2] || 5,
+                                slidesToShow: displayCounts[2] || 4,
+                                slidesToScroll: displayCounts[2] || 4,
                                 arrows: true,
                             }
                         },
                         {
                             breakpoint: 1300,
                             settings: {
-                                slidesToShow: displayCounts[3] || 7,
-                                slidesToScroll: displayCounts[3] || 7,
+                                slidesToShow: displayCounts[3] || 4,
+                                slidesToScroll: displayCounts[3] || 4,
                                 arrows: true,
                             }
                         }
