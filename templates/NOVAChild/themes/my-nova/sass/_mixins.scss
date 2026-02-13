@@ -1,0 +1,101 @@
+// Reusable mixins for common styles
+
+// Product card styling
+@mixin product-card-base {
+  padding: 20px;
+  box-shadow: $shadow-product;
+  margin: 2px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+@mixin product-card-title {
+  text-decoration: none;
+  color: $text-dark;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin product-card-price {
+  color: $text-dark;
+  font-family: Montserrat, serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+// Product wrapper hover effect
+@mixin product-hover {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+// Standard text styles
+@mixin text-body {
+  color: $text-dark;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@mixin text-heading {
+  color: $text-dark;
+  font-family: $font-family-sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+// Link styles
+@mixin link-unstyled {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Slider arrow base
+@mixin slider-arrow {
+  height: 20px;
+  width: 26px;
+
+  &::after {
+    font-size: 1.4rem;
+    position: relative;
+    bottom: 16px;
+  }
+}
+
+// Feature badge
+@mixin feature-badge {
+  background-color: #b71c1c;
+  color: $text-white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
+  flex: 1;
+  box-shadow: $shadow-card;
+  justify-content: center;
+  height: 90px;
+
+  @include md-down {
+    max-width: 100%;
+  }
+
+  @include xs-down {
+    height: auto;
+    padding: 15px 5px;
+  }
+}

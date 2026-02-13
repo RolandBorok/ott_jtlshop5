@@ -1,4 +1,25 @@
+.hr-sect.h2{
+  display: block !important;
+  &::before{
+    display: none;
+  }
+  a{
+    color: #26323C;
+    font-family: "Open Sans", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
 body[data-page="18"] {
+  .item-slider-price{
+    height: 73px;
+  }
+
+  .zum-artikel:hover{
+    color: white;
+  }
 
   .home-slider {
     .caption-list{
@@ -50,7 +71,7 @@ body[data-page="18"] {
       }
 
       .nivo-caption {
-        pointer-events: none;
+        pointer-events: none;  // ← Das ist das Problem!
         opacity: 1 !important;
         position: absolute;
         left: 35%;
@@ -67,7 +88,7 @@ body[data-page="18"] {
         font-family: 'Open Sans';
         font-weight: 600;
 
-        // RESPONSIVE FIX: Center caption on mobile so it doesn't float off-screen
+        // RESPONSIVE FIX
         @media (max-width: 991px) {
           left: 50%;
           width: 90%;
@@ -78,7 +99,16 @@ body[data-page="18"] {
           padding: 0 15px;
         }
 
+        * {
+          pointer-events: auto;
+        }
+
+        [title] {
+          pointer-events: none;
+        }
+
         .title {
+          pointer-events: none;
           align-self: flex-start;
           line-height: 3.5rem;
           font-weight: 600;
@@ -90,6 +120,7 @@ body[data-page="18"] {
         }
 
         .caption-list {
+          pointer-events: none;
           font-size: 20px;
           line-height: 1.8;
           color: inherit !important;
@@ -124,13 +155,12 @@ body[data-page="18"] {
         }
 
         &::after {
-          pointer-events: auto;
+          pointer-events: none;
           content: "Fugodicht entdecken";
           color: white;
           background: $primary;
           font-size: 18px;
           padding: 8px 20px;
-          pointer-events: auto;
           cursor: pointer;
           align-self: flex-start;
           margin-top: 10px;
@@ -139,8 +169,8 @@ body[data-page="18"] {
             font-size: 14px;
             padding: 10px 30px;
           }
-
         }
+
         &:hover::after {
           background: lighten($primary, 5%);
         }
@@ -410,7 +440,7 @@ body[data-page="18"] {
     margin-right: 2px;
     border-radius: 10px;
     text-align: left;
-    a:last-of-type{
+    a:last-of-type:not(.zum-artikel) {
       position: relative;
       left: 15px;
       text-decoration: none;

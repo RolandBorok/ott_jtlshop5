@@ -109,14 +109,14 @@
 
                                 {/col}
                                 {col cols=12}
-                                {block name='productlist-item-list-basket-details-add-to-cart'}
+                                {block name='productlist-item-list-basket-details-add-to-cart zum-artikel'}
                                     {button type="submit"
                                     variant="primary"
                                     block=true id="submit{$Artikel->kArtikel}"
                                     title="{lang key='addToCart'}"
                                     class="basket-details-add-to-cart"
                                     aria=["label"=>{lang key='addToCart'}]}
-                                    {lang key='addToCart'} <img class="slider_cart_icon" alt="cart" src="https://staging.dichtstoffe-shop.de/templates/NOVAChild/themes/my-nova/images/startseite/cart.svg">
+                                    {lang key='addToCart'} <img class="slider_cart_icon" alt="cart" src="/templates/NOVAChild/themes/my-nova/images/startseite/cart.svg">
                                     {/button}
                                 {/block}
 
@@ -127,9 +127,16 @@
                             {if $Artikel->nIstVater && $Artikel->kVaterArtikel == 0 && $Artikel->inWarenkorbLegbar === 1}
                                 {col cols=12}
                                 {block name='productlist-item-list-basket-details-details'}
-                                    {link class="btn basket-details-add-to-cart btn-primary btn-block" role="button" href=$Artikel->cURLFull}
-                                    {lang key='details ' section='custom'}
-                                    {/link}
+                                    {button type="button"
+                                    variant="primary"
+                                    block=true
+                                    id="submit{$Artikel->kArtikel}"
+                                    title="Zum Artikel"
+                                    class="basket-details-add-to-cart zum-artikel"
+                                    aria=["label"=>"Zum Artikel"]
+                                    href=$Artikel->cURLFull}
+                                        Zum Artikel
+                                    {/button}
                                 {/block}
                                 {/col}
                             {else}

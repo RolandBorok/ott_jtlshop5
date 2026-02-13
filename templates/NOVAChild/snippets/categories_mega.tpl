@@ -29,7 +29,7 @@
 
                             {* SETTINGS: Limit to 3 items per column *}
                         {assign var=counter value=0}
-                        {assign var=itemsPerCol value=2}
+                        {assign var=itemsPerCol value=9}
 
                             {*
                                col-lg-auto: Allows column to grow as wide as the text needs

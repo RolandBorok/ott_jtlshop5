@@ -1,0 +1,561 @@
+body[data-page="18"] {
+
+  .home-slider {
+    .caption-list{
+      list-style: none;
+      text-align: left;
+    }
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .nivoSlider {
+      box-shadow: none;
+      background: transparent;
+      z-index: 2;
+      min-height: 600px;
+      background-size: cover;
+      background-position: center;
+
+      @media (max-width: 1200px) {
+        min-height: 500px;
+      }
+
+      @media (max-width: 768px) {
+        min-height: 400px;
+      }
+
+      img {
+        min-height: 600px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+
+        @media (max-width: 1200px) {
+          min-height: 500px;
+        }
+
+        @media (max-width: 768px) {
+          min-height: 400px;
+        }
+      }
+      img.title-image {
+        width: auto !important;
+        min-height: auto !important;
+        height: 45px !important;
+        max-width: none !important;
+        object-fit: contain !important;
+        display: inline-block !important;
+        position: relative;
+      }
+
+      .nivo-caption {
+        pointer-events: none;
+        opacity: 1 !important;
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: none !important;
+        overflow: visible;
+        color: white !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 600px;
+        margin-left: 5px;
+        font-family: 'Open Sans';
+        font-weight: 600;
+
+        // RESPONSIVE FIX: Center caption on mobile so it doesn't float off-screen
+        @media (max-width: 991px) {
+          left: 50%;
+          width: 90%;
+        }
+
+        @media (max-width: 768px) {
+          max-width: 85%;
+          padding: 0 15px;
+        }
+
+        .title {
+          align-self: flex-start;
+          line-height: 3.5rem;
+          font-weight: 600;
+          @media (max-width: 768px) {
+            line-height: 1.2;
+            font-size: 28px;
+            margin-bottom: 10px;
+          }
+        }
+
+        .caption-list {
+          font-size: 20px;
+          line-height: 1.8;
+          color: inherit !important;
+          text-align: left;
+          width: 100%;
+          padding: 0;
+          list-style: none;
+          margin: 12px 0;
+
+          @media (max-width: 768px) {
+            font-size: 16px;
+          }
+
+          li {
+            padding-left: 30px;
+            position: relative;
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 24px;
+              height: 24px;
+              background-image: url('/templates/NOVAChild/themes/my-nova/assets/Check.png');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+        }
+
+        &::after {
+          pointer-events: auto;
+          content: "Fugodicht entdecken";
+          color: white;
+          background: $primary;
+          font-size: 18px;
+          padding: 8px 20px;
+          pointer-events: auto;
+          cursor: pointer;
+          align-self: flex-start;
+          margin-top: 10px;
+
+          @media (max-width: 768px) {
+            font-size: 14px;
+            padding: 10px 30px;
+          }
+
+        }
+        &:hover::after {
+          background: lighten($primary, 5%);
+        }
+      }
+    }
+
+    .nivo-directionNav .nivo-nextNav {
+      background: url('/templates/NOVAChild/themes/my-nova/assets/button-right.svg') no-repeat;
+      height: 45px;
+    }
+
+    .nivo-directionNav .nivo-prevNav {
+      background: url('/templates/NOVAChild/themes/my-nova/assets/button-left.svg') no-repeat;
+      height: 45px;
+    }
+  }
+
+  h2{
+    color: #26323C;
+    font-family: "Open Sans", serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  //second element
+  .features-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 0 15px; // Prevents touching edges
+  }
+
+  .feature-badge {
+    background-color: #b71c1c;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+    flex: 1;
+    min-width: 280px; // Ensures they don't get too skinny
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    justify-content: center;
+    height: 90px;
+
+    // RESPONSIVE FIX: Allow height to expand if text wraps on tiny screens
+    @media (max-width: 480px) {
+      height: auto;
+      padding: 15px 5px;
+    }
+  }
+
+  .icon-label {
+    display: none;
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .title {
+    font-size: 17px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+  @media (max-width: 768px) {
+    .features-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .feature-badge {
+      max-width: 100%;
+    }
+  }
+
+  //third element
+  .expertise-section {
+    background-color: #26323C;
+    color: white;
+    padding: 20px 50px;
+    margin-top: 100px;
+    @media (max-width: 768px) {
+      margin-top: 50px;
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .main-title {
+    color: #FFF;
+    font-family: "Open Sans", serif;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .check-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .feature-item p {
+    color: #FFF;
+    font-family: "Open Sans", serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .process-steps {
+    display: flex;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+  }
+
+  .step-icon {
+    margin-bottom: 20px;
+  }
+
+  .step-text {
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 200px;
+  }
+
+  .arrow {
+    position: relative;
+    top: 25px;
+  }
+
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .process-steps {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .expertise-section {
+      padding: 40px 20px;
+    }
+
+    .main-title {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .process-steps {
+      flex-direction: column;
+    }
+
+    .arrow {
+      transform: rotate(90deg);
+      font-size: 36px;
+      top: 100px;
+    }
+
+    .step-icon {
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step-text {
+      max-width: 280px;
+    }
+  }
+
+  //slider
+  .input-group.form-counter{
+    display: none;
+  }
+  @media  (min-width: 1500px){
+    .opc-product-slider {
+      overflow: visible !important;
+    }
+  }
+
+  .slick-dots li button {
+    border-radius: 0 !important;
+  }
+
+  // RESPONSIVE FIX: Hide arrows on small screens if they overlap or break layout
+  @media (max-width: 1300px) {
+    .slick-prev, .slick-next {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .slick-prev {
+    margin-left: -60px;
+    &::after { right: 7px; }
+  }
+
+  .slick-next {
+    margin-right: -60px;
+    &::after { right: 5px; }
+  }
+
+  .slick-arrow {
+    height: 20px;
+    width: 26px;
+    &::after {
+      font-size: 1.4rem;
+      position: relative;
+      bottom: 16px;
+    }
+  }
+
+  .product-wrapper {
+    margin: 15px 0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .product-wrapper .productbox-inner {
+    padding: 20px 20px;
+    box-shadow: 0 3px 7.3px 2px rgba(0, 0, 0, 0.25);
+    margin-left: 2px;
+    margin-top: 5px;
+    margin-right: 2px;
+    border-radius: 10px;
+    text-align: left;
+    a:last-of-type{
+      position: relative;
+      left: 15px;
+      text-decoration: none;
+      color: #26323C;
+      font-family: "Open Sans", serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      top: 20px;
+    }
+    .item-slider-price{
+      position: relative;
+      left: 15px;
+      top: 30px;
+    }
+    .productbox-price{
+      color: #26323C;
+      font-family: Montserrat, serif;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  .slider_cart_icon {
+    display: inline !important;
+    margin-left: 10px;
+  }
+
+  //4. Element
+  .gewerke {
+    display: flex;
+    height: 338px;
+    @media (max-width: 900px) {
+      height: auto; // Let it grow on mobile
+    }
+  }
+  @media (max-width: 1300px) {
+    .zertifiziert .col-xl-1 {
+      display: none;
+    }
+  }
+  /* Left Content Section */
+  .content-section {
+    background-color: #26323C;
+    color: white;
+    padding: 60px 80px 60px 40px;
+    flex: 1;
+    z-index: 2;
+
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    margin-right: -9%;
+
+    @media (max-width: 900px) {
+      clip-path: none;
+      margin-right: 0;
+      padding: 40px 20px;
+    }
+  }
+
+  .content-section h1 {
+    color: white;
+  }
+
+  .content-section p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+
+  .cta-button {
+    background-color: #BA0109;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-decoration: none;
+  }
+
+  .cta-button:hover {
+    background-color: #d40000;
+  }
+
+  /* Right Services Grid */
+  .services-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    z-index: 1;
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr; // Single column on very small phones
+    }
+  }
+
+  .service-card {
+    background-color: #BA0109;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+    font-size: 1.5rem;
+
+    @media (max-width: 900px) {
+      padding: 20px;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Responsive adjustments (Main container) */
+  @media (max-width: 900px) {
+    .gewerke {
+      flex-direction: column;
+    }
+    .services-grid {
+      padding: 20px;
+    }
+  }
+}
+
+.home-slider {
+  .nivo-controlNav {
+    .nivo-control {
+      background: url(/templates/NOVAChild/themes/my-nova/assets/bullets_transparent.png) no-repeat
+    }
+  }
+}
+
+.custom_content {
+  display: flex;
+  gap: 40px; /* space between columns */
+  flex-wrap: wrap; /* stacks on small screens */
+}
+
+.custom_content .block {
+  flex: 1;
+  min-width: 250px;
+}

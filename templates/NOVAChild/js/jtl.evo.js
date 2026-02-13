@@ -167,7 +167,7 @@
                 'product-slider' : {
                     rows:           0,
                     arrows:         false,
-                    lazyLoad:       'ondemand',
+                    lazyLoad:       'null',
                     slidesToShow:   displayCounts[0] || 2,
                     slidesToScroll: displayCounts[0] || 2,
                     mobileFirst:    true,
@@ -311,7 +311,39 @@
                 $('#gallery_preview').slick(sliderOptions['gallery_preview']);
             }
 
-            return node.slick(sliderOptions[sliderType]);
+            let slider = node.slick(sliderOptions[sliderType]);
+
+            // Fix: Refresh slider after images load to fix incorrect widths on first load
+            let images = node.find('img');
+            let loadedImages = 0;
+            let totalImages = images.length;
+
+            if (totalImages > 0) {
+                images.each(function() {
+                    if (this.complete) {
+                        loadedImages++;
+                        if (loadedImages === totalImages) {
+                            node.slick('setPosition');
+                        }
+                    } else {
+                        $(this).on('load', function() {
+                            loadedImages++;
+                            if (loadedImages === totalImages) {
+                                node.slick('setPosition');
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Fallback: refresh after short delay in case some images fail
+            setTimeout(function() {
+                if (node.hasClass('slick-initialized')) {
+                    node.slick('setPosition');
+                }
+            }, 300);
+
+            return slider;
         },
 
         scrollStuff: function() {
@@ -1168,11 +1200,14 @@
             $(window).on("load resize", function() {
                 let productWrapper = $('.product-wrapper');
                 $.each(productWrapper, function() {
-                    // Skip if element is inside a closed collapse.
                     let collapse = $(this).closest('.collapse');
                     if (collapse.length === 0 || collapse.hasClass('show')) {
-                        let boxHeight = $(this).height()
-                        $(this).height(boxHeight);
+                        // COMMENT OUT THIS LINE BELOW:
+                        // let boxHeight = $(this).height()
+                        // $(this).height(boxHeight);
+
+                        // ADD THIS INSTEAD to ensure it stays auto:
+                        $(this).css('height', 'auto');
                     }
                 })
             })

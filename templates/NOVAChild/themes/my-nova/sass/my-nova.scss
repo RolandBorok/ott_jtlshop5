@@ -10,6 +10,7 @@
 
 // Lädt "my-nova"-Variablen. Hier können Variablen aus Bootstrap und dem NOVA-Theme überschrieben werden.
 @import "variables";
+@import "breakpoints";
 
 // Lädt Style Angaben des Themes, hier "clear".
 @import '../../../../NOVA/themes/clear/sass/allstyles';

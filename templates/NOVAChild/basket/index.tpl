@@ -35,6 +35,10 @@
                                 {/form}
                             {/block}
                             <div class="safety_info_basket">Der hier angezeigte Preis ist einschließlich deutscher Umsatzsteuer. Bitte beachten Sie, dass der Endpreis von der tatsächlichen Umsatzsteuer abhängig ist, die für Ihre Bestellung anfällt.  Wenn Sie als Privatkunde (B2C) aus dem EU-Ausland bestellen, wird aufgrund der Umsatzsteuerreform ab 01. Juli 2021 die gültige Umsatzsteuer für das Bestimmungsland berechnet. Der Endpreis wird in der Bestellübersicht vor Abschluss der Bestellung ersichtlich, sobald Sie Ihre persönlichen Daten und das Bestimmungsland eingegeben haben.</div>
+                            {if isset($Xselling->Kauf->Artikel) && count($Xselling->Kauf->Artikel) > 0}
+                                {lang key='customerWhoBoughtXBoughtAlsoY' section='productDetails' assign='slidertitle'}
+                                {include file='snippets/product_slider.tpl' class='x-sell' id='slider-xsell' productlist=$Xselling->Kauf->Artikel title=$slidertitle}
+                            {/if}
 
                             {if $oArtikelGeschenk_arr|@count > 0}
                                 {block name='basket-index-freegifts-content'}
@@ -200,7 +204,7 @@
                             {if $favourableShippingString !== ''}
                                 {row class="shipping-costs"}
                                 {col cols=12}
-                                    <small>Zzgl. <a href="https://www.dichtstoffe-shop.de/Dichtstoffe-Shop-Versandkosten" class="shipment popup">Versandkosten</a></small>
+                            <small>{$favourableShippingString}</small>
                                 {/col}
                                 {/row}
                             {/if}

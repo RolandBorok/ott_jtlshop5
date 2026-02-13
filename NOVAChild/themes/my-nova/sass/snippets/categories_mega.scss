@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;600;700&display=swap');
+
+.subcategory-wrapper{
+  position: relative;
+  left: 25px;
+}
+
+.product-category-col {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 0 !important; /* Space before the vertical line */
+  padding-left: 20px !important;  /* Space after the vertical line of previous col */
+
+  /* Variable width logic */
+  min-width: 450px;    /* Ensures columns aren't too skinny */
+
+  /* The vertical separator line */
+  border-right: 1px solid #e0e0e0;
+  a{
+    min-width: 450px;
+  }
+}
+
+/* Remove line from the very last column */
+.product-category-col:last-child {
+  border-right: none;
+}
+
+/* Remove padding-left from the very first column so it aligns with the logo/edge */
+.product-category-col:first-of-type {
+  padding-left: 15px;
+}
+
+.product-category-link {
+  display: block;
+  padding: 8px 0;           /* Vertical spacing between items */
+  font-weight: 400;
+  text-decoration: none;
+  color: #26323C !important;
+
+  font-family: "Open Sans", serif;
+  font-size: 15px;
+  font-style: normal;
+  line-height: normal;
+
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.product-category-link::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  background-image: url("/templates/NOVAChild/themes/my-nova/assets/icon-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.product-category-link:hover {
+  text-decoration: none;
+  color: #BA0109 !important;
+  font-weight: 700;
+}
+
+.product-category-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+  top: 3px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .product-category-col {
+    border-right: none;
+    padding-left: 15px;
+    white-space: normal; /* Allow wrapping on mobile */
+  }
+  .product-category-link {
+    white-space: normal;
+  }
+}
