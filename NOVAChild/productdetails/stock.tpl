@@ -37,7 +37,7 @@
                             ($Einstellungen.artikeldetails.artikeldetails_lieferstatus_anzeigen === 'L' && $Artikel->fLagerbestand == 0 && $Artikel->cLagerBeachten === 'Y') ||
                             ($Einstellungen.artikeldetails.artikeldetails_lieferstatus_anzeigen === 'A' && ($Artikel->fLagerbestand > 0 || $Artikel->cLagerKleinerNull === 'Y' || $Artikel->cLagerBeachten !== 'Y')))}
                                 {block name='productdetails-stock-delivery-status'}
-                                    <div class="delivery-status">{lang key='deliveryStatus'}: {$Artikel->cLieferstatus}  <a href="https://www.dichtstoffe-shop.de/Dichtstoffe-Shop-Versandkosten" target="_blank" class="delivery-status-link">(Ausland abweichend)</a></div>
+                                    <div class="delivery-status">{lang key='deliveryStatus'}: {$Artikel->cLieferstatus}  <a href="https://www.dichtstoffe-shop.de/Dichtstoffe-Shop-Versandkosten" target="_blank" style="font-size:11px;">(Ausland abweichend)</a></div>
                                 {/block}
                             {/if}
                         </li>

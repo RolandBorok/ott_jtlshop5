@@ -71,7 +71,7 @@ body[data-page="18"] {
       }
 
       .nivo-caption {
-        pointer-events: none;  // ← Das ist das Problem!
+        pointer-events: none;
         opacity: 1 !important;
         position: absolute;
         left: 35%;

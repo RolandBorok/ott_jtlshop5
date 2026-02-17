@@ -1,5 +1,5 @@
 .product-detail .product-manufacturer img {
-  max-width: 100px !important;
+  max-width: 100px;
 }
 .desc.truncated p:nth-of-type(n+5) {
   display: none;
@@ -7,9 +7,6 @@
 
 .product-han, .mediafiles-description{
   display: none;
-  .col-md-6{
-    max-width: 100% !important;
-  }
 }
 
 .attr-custom{
@@ -20,7 +17,7 @@
 
 .price.h1{
   font-size: 2.5rem;
-  font-weight: 700 !important;
+  font-weight: 700;
 }
 
 .desc-btn {
@@ -46,6 +43,19 @@
 .name_hersteller{
   display: flex;
 }
+.delivery-status-link {
+  font-size: 11px;
+}
+
+.gewerblich-hinweis {
+  width: 100%;
+  color: #000;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  font-size: 13px;
+  margin: 10px 1rem 10px;
+}
+
 .sicherheitshinweise-wrapper{
   display: flex;
   flex-wrap: wrap;

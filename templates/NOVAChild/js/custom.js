@@ -3,16 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1. Check: Existiert der Rechner überhaupt?
     if (!document.getElementById('width')) return;
 
-    console.log("Material-Rechner initialisiert.");
-
     let currentForm = 'square';
 
     function getValueSafe(id) {
         const element = document.getElementById(id);
-        if (!element) {
-            console.warn('Warnung: Element mit ID "' + id + '" nicht gefunden!');
-            return 0;
-        }
+        if (!element) return 0;
         return parseFloat(element.value) || 0;
     }
 
@@ -142,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-$(function () {
+$(document).ready(function(){
     $('.product-slider:not(.slick-initialized)').slick({
         infinite: true,
         arrows: true,
@@ -152,87 +147,45 @@ $(function () {
         cssEase: 'linear',
         autoplay: false
     });
-});
 
-$(document).ready(function(){
-
-    //init container with class "video-slider"
-    $('.video-slider > div ').slick({
+    $('.video-slider > div').slick({
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 4,
-        arrows:true,
-        dots:false,
-        responsive:     [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots:false,
-                    arrows:true,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow:2,
-                    slidesToScroll: 2,
-                    arrows: true,
-                    dots:false,
-                }
-            },
+        arrows: true,
+        dots: false,
+        responsive: [
+            { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1, dots: false, arrows: true } },
+            { breakpoint: 992, settings: { slidesToShow: 2, slidesToScroll: 2, arrows: true, dots: false } }
         ]
     });
 
-
-    //init container with class "video-slider"
-    $('.team-slider > div ').slick({
+    $('.team-slider > div').slick({
         infinite: true,
         lazyLoad: 'progressive',
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows:true,
-        centerMode:true,
+        arrows: true,
+        centerMode: true,
         centerPadding: '-20px',
-        dots:false,
+        dots: false,
         focusOnSelect: true,
-        responsive:     [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots:true,
-                    arrows:false,
-                }
-            },
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow:1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    dots:true,
-                }
-            },
+        responsive: [
+            { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1, dots: true, arrows: false } },
+            { breakpoint: 992, settings: { slidesToShow: 1, slidesToScroll: 1, arrows: false, dots: true } }
         ]
     });
 
-
-    //init container with class "home-slider"
     $('.slick-slider').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows:true,
-        dots:false,
+        arrows: true,
+        dots: false,
         speed: 500,
         fade: true,
         cssEase: 'linear',
         autoplay: true,
-        autoplaySpeed: 4000,
-
+        autoplaySpeed: 4000
     });
-
 });

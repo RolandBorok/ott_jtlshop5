@@ -233,7 +233,7 @@
                                 {/row}
                             {/block}
                         {/if}
-                        <img class="vorteile" src="/media/image/icons/trust-element.png" alt="test">
+                        <img class="vorteile" src="{$ShopURL}/media/image/icons/trust-element.png" alt="Vorteile und Sicherheit" loading="lazy">
                     </div>
                 {/col}
             {/block}

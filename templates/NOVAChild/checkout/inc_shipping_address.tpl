@@ -1,7 +1,5 @@
 {block name='checkout-inc-shipping-address'}
     {assign var=fehlendeAngabenShipping value=$fehlendeAngaben.shippingAddress|default:null}
-    {* {assign var=showShippingAddress value=(isset($Lieferadresse) || !empty($kLieferadresse) || isset($forceDeliveryAddress))}*}
-    {*WI_CUSTOM: FORCE CHECKED ShippingAdress*}
     {assign var=showShippingAddress value=0}
 
     {row class="inc-shipping-address"}
@@ -32,7 +30,7 @@
                     {/col}
                     {col md=8}
                     {block name='checkout-inc-shipping-address-fieldset-address'}
-                        <table id="shipping-address-templates" class="table table-hover display compact" style="width:100%">
+                        <table id="shipping-address-templates" class="table table-hover display compact w-100">
                             <thead>
                             <tr>
                                 <th>&nbsp;</th>
@@ -158,71 +156,66 @@
             </script>{/inline_script}
         {/block}
     {/if}
-{/block}
+    {inline_script}<script>
+        $(document).ready(function () {
+            var $table = $('#shipping-address-templates');
+            if (!$table.length) return;
 
-<script>
-    $(document).ready(function () {
-        function format(d) {
-            return (d.moreAddressData);
-        }
-
-        var table = $('#shipping-address-templates').DataTable( {
-            language: {
-                "lengthMenu":        "{lang key='lengthMenu' section='datatables'}",
-                "info":              "{lang key='info' section='datatables'}",
-                "infoEmpty":         "{lang key='infoEmpty' section='datatables'}",
-                "infoFiltered":      "{lang key='infoFiltered' section='datatables'}",
-                "search":            "",
-                "searchPlaceholder": "{lang key='search' section='datatables'}",
-                "zeroRecords":       "{lang key='zeroRecords' section='datatables'}",
-                "paginate": {
-                    "first":    "{lang key='paginatefirst' section='datatables'}",
-                    "last":     "{lang key='paginatelast' section='datatables'}",
-                    "next":     "{lang key='paginatenext' section='datatables'}",
-                    "previous": "{lang key='paginateprevious' section='datatables'}"
-                }
-            },
-            columns: [
-                { data: 'select' },
-                { data: 'address' },
-                { data: 'buttons' },
-                { data: 'sort' }
-            ],
-            select: {
-                style: 'single'
-            },
-            columnDefs: [
-                {
-                    targets: [3],
-                    visible: false,
-                }
-            ],
-            lengthMenu: [ [5, 10, 25, 50, -1], [5, 10, 25, 50, "{lang key='showAll'}"] ],
-            pageLength: 5,
-            order: [2, 'desc'],
-            initComplete: function (settings, json) {
-                $('.dataTables_filter input[type=search]').removeClass('form-control-sm');
-                $('.dataTables_length select').removeClass('custom-select-sm form-control-sm');
-                $('.dt-address').on('click', function (e) {
-                    let deliveryID = $(this).data('delivery-id').substring(1);
-                    $(this).closest('tr').find('label[for="'+deliveryID+'"]').click();
-                });
-            },
-            drawCallback: function( settings ) {
-                $('table.dataTable thead').remove();
-            },
-        } );
-
-        $('#shipping-address-templates tbody').on('click', 'td.dt-control', function () {
-            let tr = $(this).closest('tr'),
-                row = table.row(tr);
-            if (row.child.isShown()) {
-                row.child.hide();
-                tr.removeClass('shown');
-            } else {
-                row.child(format(row.data())).show();
-                tr.addClass('shown');
+            function format(d) {
+                return (d.moreAddressData);
             }
+
+            var table = $table.DataTable({
+                language: {
+                    "lengthMenu":        "{lang key='lengthMenu' section='datatables'}",
+                    "info":              "{lang key='info' section='datatables'}",
+                    "infoEmpty":         "{lang key='infoEmpty' section='datatables'}",
+                    "infoFiltered":      "{lang key='infoFiltered' section='datatables'}",
+                    "search":            "",
+                    "searchPlaceholder": "{lang key='search' section='datatables'}",
+                    "zeroRecords":       "{lang key='zeroRecords' section='datatables'}",
+                    "paginate": {
+                        "first":    "{lang key='paginatefirst' section='datatables'}",
+                        "last":     "{lang key='paginatelast' section='datatables'}",
+                        "next":     "{lang key='paginatenext' section='datatables'}",
+                        "previous": "{lang key='paginateprevious' section='datatables'}"
+                    }
+                },
+                columns: [
+                    { data: 'select' },
+                    { data: 'address' },
+                    { data: 'buttons' },
+                    { data: 'sort' }
+                ],
+                select: { style: 'single' },
+                columnDefs: [{ targets: [3], visible: false }],
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "{lang key='showAll'}"]],
+                pageLength: 5,
+                order: [2, 'desc'],
+                initComplete: function () {
+                    $('.dataTables_filter input[type=search]').removeClass('form-control-sm');
+                    $('.dataTables_length select').removeClass('custom-select-sm form-control-sm');
+                    $('.dt-address').on('click', function () {
+                        var deliveryID = $(this).data('delivery-id').substring(1);
+                        $(this).closest('tr').find('label[for="'+deliveryID+'"]').click();
+                    });
+                },
+                drawCallback: function () {
+                    $('table.dataTable thead').remove();
+                }
+            });
+
+            $table.find('tbody').on('click', 'td.dt-control', function () {
+                var tr = $(this).closest('tr'),
+                    row = table.row(tr);
+                if (row.child.isShown()) {
+                    row.child.hide();
+                    tr.removeClass('shown');
+                } else {
+                    row.child(format(row.data())).show();
+                    tr.addClass('shown');
+                }
+            });
         });
-    });
-</script>
+    </script>{/inline_script}
+{/block}

@@ -195,7 +195,6 @@
                 {input type="hidden" name="kSprache" value=$smarty.session.kSprache}
             {/block}
             {block name='productdetails-details-include-variation'}
-                <!-- VARIATIONEN -->
                 {include file='productdetails/variation.tpl' simple=$Artikel->isSimpleVariation showMatrix=$showMatrix}
             {/block}
 
@@ -209,7 +208,7 @@
             {/block}
 
             {if (isset($Artikel->FunktionsAttribute['gewerblich']) && $Artikel->FunktionsAttribute['gewerblich']|@strlen > 0)}
-                <div style="width: 100%;color:#000;padding:10px;border:1px solid #ff0000;font-size:13px;margin:10px 1rem 10px;">Verkauf nur an gewerblichen Kunden unter Angabe der Umsatzsteueridentnummer</div>
+                <div class="gewerblich-hinweis">Verkauf nur an gewerblichen Kunden unter Angabe der Umsatzsteueridentnummer</div>
             {/if}
             {block name='productdetails-details-stock'}
                 {col cols=12}
@@ -288,14 +287,11 @@
                 <div class="sicherheitshinweise-wrapper">
                     <strong>Gefahren- und Sicherheitshinweise - bitte anklicken zum Vergrößern</strong><br>
 
-                    <!-- Trigger: The clickable image -->
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#shModal">
                         <img src="https://www.dichtstoffe-shop.de/mediafiles/Datenblaetter/sicherheitshinweise/{$Artikel->FunktionsAttribute.sicherheitshinweise}.jpg"
                              alt="Sicherheitshinweise"
-                             class="img-responsive img-fluid sh-preview"/>
+                             class="img-responsive img-fluid sh-preview" loading="lazy"/>
                     </a>
-
-                    <!-- The Popup (Bootstrap Modal) -->
                     <div class="modal fade" id="shModal" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
@@ -306,8 +302,9 @@
                                     </button>
                                 </div>
                                 <div class="modal-body text-center">
-                                    <img src="https://www.dichtstoffe-shop.de//mediafiles/Datenblaetter/sicherheitshinweise/{$Artikel->FunktionsAttribute.sicherheitshinweise}.jpg"
-                                         class="img-fluid"/>
+                                    <img src="https://www.dichtstoffe-shop.de/mediafiles/Datenblaetter/sicherheitshinweise/{$Artikel->FunktionsAttribute.sicherheitshinweise}.jpg"
+                                         alt="Sicherheitshinweise"
+                                         class="img-fluid" loading="lazy"/>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>

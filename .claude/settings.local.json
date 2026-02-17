@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell:*)",
+      "Bash(\"C:\\\\GitHub Webseiten\\\\ott_jtlshop5\\\\templates\\\\NOVAChild\\\\themes\\\\my-nova\\\\images\\\\startseite\\\\icon-24-h.svg\" << 'SVGEOF'\n<svg width=\"79\" height=\"79\" viewBox=\"0 0 79 79\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <circle cx=\"39\" cy=\"32\" r=\"22\" stroke=\"#C8C8C8\" stroke-width=\"3\" fill=\"none\"/>\n  <line x1=\"39\" y1=\"32\" x2=\"39\" y2=\"18\" stroke=\"#C8C8C8\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n  <line x1=\"39\" y1=\"32\" x2=\"48\" y2=\"32\" stroke=\"#C8C8C8\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n  <circle cx=\"39\" cy=\"32\" r=\"2\" fill=\"#C8C8C8\"/>\n  <path d=\"M55 16 C58 20, 59 25, 58 28\" stroke=\"#C8C8C8\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/>\n  <polygon points=\"56,14 59,18 53,18\" fill=\"#C8C8C8\"/>\n  <text x=\"39.5\" y=\"72\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-weight=\"700\" font-size=\"22\" fill=\"#C8C8C8\">24h</text>\n</svg>\nSVGEOF)"
+    ]
+  }
+}
