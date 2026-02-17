@@ -209,7 +209,7 @@
             {/block}
 
             {if (isset($Artikel->FunktionsAttribute['gewerblich']) && $Artikel->FunktionsAttribute['gewerblich']|@strlen > 0)}
-                <div style="color:#000;padding:10px;border:1px solid #ff0000;font-size:13px;margin:10px 1rem 10px;">Verkauf nur an gewerblichen Kunden unter Angabe der Umsatzsteueridentnummer</div>
+                <div style="width: 100%;color:#000;padding:10px;border:1px solid #ff0000;font-size:13px;margin:10px 1rem 10px;">Verkauf nur an gewerblichen Kunden unter Angabe der Umsatzsteueridentnummer</div>
             {/if}
             {block name='productdetails-details-stock'}
                 {col cols=12}
